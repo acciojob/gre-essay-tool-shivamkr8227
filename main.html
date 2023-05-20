@@ -7,11 +7,31 @@
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-<input type="text" id="evaluatedText" oninput="countltr()">
-	<h3 id="wordCount">0</h3>
+	 <h3>Word Count: <span id="wordCount">0</span></h3>
+  <textarea id="evaluatedText" rows="4" cols="50"></textarea>
+
+  <script>
+    // Get the necessary elements
+    const evaluatedText = document.getElementById('evaluatedText');
+    const wordCount = document.getElementById('wordCount');
+
+    // Add event listener to the evaluatedText textarea
+    evaluatedText.addEventListener('input', updateWordCount);
+
+    // Function to update the word count
+    function updateWordCount() {
+      // Get the current text from the evaluatedText textarea
+      const text = evaluatedText.value;
+
+      // Count the number of words
+      const count = text.trim().split(/\s+/).length;
+
+      // Update the word count in the wordCount element
+      wordCount.textContent = count;
+    }
+  </script>
+			
+
 </body>
 
 </html>
